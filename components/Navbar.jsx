@@ -48,6 +48,11 @@ const Navbar = () => {
               Postlar
             </NavigationMenuLink>
           </Link>
+          <Link href="/playground" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              Playground
+            </NavigationMenuLink>
+          </Link>
         </NavigationMenuList>
       </NavigationMenu>
 
