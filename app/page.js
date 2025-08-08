@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogFooter, DialogTitle, DialogTrigger, DialogDescription } from "@/components/ui/dialog";
+import { DialogClose } from "@radix-ui/react-dialog";
 export default function Home() {
   return (
     <div className="p-7">
@@ -25,15 +26,15 @@ export default function Home() {
           </Link>
           <Dialog >
             <DialogTrigger asChild>
-              <Button  variant="outline">Open Dialog</Button>
+              <Button  variant="outline">Share idea</Button>
             </DialogTrigger>
             <DialogContent>
-              <DialogTitle>Playground</DialogTitle>
+              <DialogTitle>Share your ideas</DialogTitle>
               <DialogDescription>
-                Discover new tools and resources for developers.
+                We value your feedback and suggestions.
               </DialogDescription>
               <DialogFooter>
-                <Button variant="outline">Close</Button>
+                <DialogClose><Button variant="outline">Close</Button></DialogClose>
               </DialogFooter>
             </DialogContent>
           </Dialog>
