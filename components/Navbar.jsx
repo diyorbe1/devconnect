@@ -12,7 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { supabase } from '@/lib/supabaseClient';
 import { useRouter } from 'next/navigation';
-import { Home, LogOut, Play, Text, User, UserPlus2, LogIn } from 'lucide-react';
+
 const Navbar = () => {
   const [session, setSession] = useState(null);
   const router = useRouter();
@@ -33,7 +33,6 @@ const Navbar = () => {
   return (
     <nav className="flex justify-between items-center p-4 bg-white text-black dark:bg-zinc-800 dark:text-white border-b">
       <div className="text-xl font-bold">
-        
         <Link href="/">DevConnect</Link>
       </div>
 
@@ -41,17 +40,17 @@ const Navbar = () => {
         <NavigationMenuList>
           <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              <Home>Home</Home>
+              Bosh sahifa
             </NavigationMenuLink>
           </Link>
           <Link href="/posts" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              <Text>Posts</Text>
+              Postlar
             </NavigationMenuLink>
           </Link>
           <Link href="/playground" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              <Play>Playground</Play>
+              Playground
             </NavigationMenuLink>
           </Link>
         </NavigationMenuList>
@@ -61,17 +60,17 @@ const Navbar = () => {
         {session ? (
           <>
             <Link href="/profile">
-              <Button variant="outline"><User />Profile</Button>
+              <Button variant="outline">Profil</Button>
             </Link>
-            <Button onClick={handleSignOut}><LogOut />Sign Out</Button>
+            <Button onClick={handleSignOut}>Chiqish</Button>
           </>
         ) : (
           <>
             <Link href="/login">
-              <Button variant="outline"><LogIn />Login</Button>
+              <Button variant="outline">Kirish</Button>
             </Link>
             <Link href="/signup">
-              <Button><UserPlus2 />Sign Up</Button>
+              <Button>Ro'yxatdan o'tish</Button>
             </Link>
           </>
         )}
